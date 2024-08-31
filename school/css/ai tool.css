@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
 }
 .navbar-nav.custom-gap .nav-link {
-    margin-right: 50px; /* Adjust this value to reduce or increase the gap */
+    margin-right: 50px; 
 }
 .navbar {
     border-bottom: 2px solid #f8f9fa;
@@ -10,14 +10,14 @@ body {
 }
 
 .content-box {
-    background-color: #e0f7fa; /* Light teal background for the content box */
-    border-radius: 0 80px 80px 0; /* Rounded only on the left side */
+    background-color: #e0f7fa; 
+    border-radius: 0 80px 80px 0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
 }
 
 .building-img {
-    max-width: 250px; /* Set the width of the image */
+    max-width: 250px; 
     border-radius: 10px;
 }
 body {
@@ -41,7 +41,7 @@ body {
 }
 
 .container {
-    background-color: #e8f8ff; /* Light blue background */
+    background-color: #e8f8ff; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

@@ -1,4 +1,4 @@
-/* Custom styles for the page */
+
 .section-title1 {
     background-color: #009999;
     color: rgb(0, 0, 0);
@@ -14,7 +14,6 @@
     position: relative;
     border: 5px solid #454747;
 }
-/* Custom styles for the page */
 .section-title {
     background-color: #009999;
     color: rgb(0, 0, 0);
@@ -41,7 +40,7 @@ ul {
 }
 
 ul li::before {
-    content: "\2713"; /* Checkmark */
+    content: "\2713"; 
     margin-right: 2px;
     color: #009999;
     font-weight: bold;
@@ -67,7 +66,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Custom gap between navbar items */
+
 .navbar-nav.custom-gap .nav-link {
-    margin-right: 50px; /* Adjust this value to reduce or increase the gap */
+    margin-right: 50px;
 }

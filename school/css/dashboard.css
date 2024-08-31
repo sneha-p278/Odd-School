@@ -1,64 +1,64 @@
 body {
-    font-family: 'Poppins', sans-serif; /* Consistent with modern designs */
-    background-color: #f5f7fb; /* Light background color */
-    color: #333; /* Default text color */
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f5f7fb; 
+    color: #333; 
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    color: #2d3436; /* Dark gray for headings */
+    color: #2d3436; 
 }
 
 p {
-    color: #636e72; /* Light gray for paragraphs */
+    color: #636e72;
     margin-bottom: 1rem;
 }
 .sidebar {
-    background-color: #1c1c1e; /* Dark sidebar background */
-    min-height: 100vh; /* Full height */
-    padding-top: 20px; /* Top padding for spacing */
-    display: flex; /* Enable flexbox */
-    flex-direction: column; /* Arrange children in a column */
+    background-color: #1c1c1e; 
+    min-height: 100vh; 
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column; 
 }
 
 .sidebar .nav-link {
-    color: #8e8e93; /* Inactive link color */
+    color: #8e8e93; 
     font-weight: 500;
     padding: 15px;
-    margin-bottom: 10px; /* Space between items */
-    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 10px; 
+    border-radius: 8px; 
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between icon and text */
+    gap: 10px; 
 }
 
 .sidebar .nav-link.active {
-    background-color: #6c5ce7; /* Active link background */
-    color: #ffffff; /* Active link text color */
+    background-color: #6c5ce7; 
+    color: #ffffff; 
 }
 
 .sidebar .nav-link i {
-    font-size: 18px; /* Icon size */
+    font-size: 18px; 
 }
 
 .sidebar .nav-link:hover {
-    background-color: #575fcf; /* Hover effect */
+    background-color: #575fcf;
     color: #ffffff;
 }
 
 .user-info {
-    color: #ffffff; /* White text for user info */
+    color: #ffffff; 
     text-align: left;
-    margin-top: 20px; /* Push to the bottom */
+    margin-top: 20px; 
     padding: 20px;
     padding-top: 200px;
 }
 
 .user-info img {
-    border-radius: 50%; /* Rounded user image */
-    margin-bottom: 10px; /* Spacing below image */
+    border-radius: 50%;
+    margin-bottom: 10px; 
 }
 
 .user-info span {
@@ -68,20 +68,20 @@ p {
 
 .user-info p {
     font-size: 14px;
-    color: #b2bec3; /* Lighter gray for role text */
+    color: #b2bec3; 
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0; /* Padding around the header */
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px 0; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .header h1 {
-    font-size: 24px; /* Size for greeting */
+    font-size: 24px; 
     font-weight: 600;
     color: #2d3436;
 }
@@ -93,31 +93,31 @@ p {
 }
 
 .search-bar input {
-    border-radius: 20px 0 0 20px; /* Rounded left corners */
-    border: 1px solid #dfe6e9; /* Light border */
+    border-radius: 20px 0 0 20px; 
+    border: 1px solid #dfe6e9; 
     padding: 8px 15px;
     width: 100%;
 }
 
 .search-bar button {
-    background-color: #6c5ce7; /* Button color */
+    background-color: #6c5ce7; 
     border: none;
-    border-radius: 0 20px 20px 0; /* Rounded right corners */
-    color: #ffffff; /* White icon */
+    border-radius: 0 20px 20px 0;
+    color: #ffffff; 
     padding: 8px 15px;
     cursor: pointer;
 }
 .stats-card {
-    border-radius: 16px; /* Soft rounded corners */
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 16px; 
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     padding: 20px;
     text-align: center;
 }
 
 .stats-card h3 {
-    color: #a1a1a1; /* Light gray for titles */
-    font-size: 1rem; /* Small title size */
+    color: #a1a1a1; 
+    font-size: 1rem; 
     margin-bottom: 10px;
 }
 
