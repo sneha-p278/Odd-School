@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd School Structures Transition Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #333;
+            margin: 0;
+        }
+        .tagline {
+            color: #666;
+            margin-top: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .module {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .module-header {
+            background-color: #4fc3f7;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .module-content {
+            padding: 20px;
+        }
+        .module-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .module-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .module-button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .module-button:hover {
+            background-color: #f57c00;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Odd School Structures Transition Dashboard</h1>
+            <p class="tagline">Streamlining the transition process for a better educational future</p>
+        </header>
+        <div class="grid">
+            <div class="module">
+                <div class="module-header">Login for School Directory</div>
+                <div class="module-content">
+                    <div class="module-icon">🔒</div>
+                    <div class="module-description">Manage school data, users, and roles.</div>
+                    <button class="module-button">Login</button>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">Profile & Facilities</div>
+                <div class="module-content">
+                    <div class="module-icon">🏫</div>
+                    <div class="module-description">View and update school profile and facility details.</div>
+                    <button class="module-button">Update</button>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">School User Dashboard</div>
+                <div class="module-content">
+                    <div class="module-icon">👨‍🎓</div>
+                    <div class="module-description">Access school-specific metrics, zone details, and action plans.</div>
+                    <select id="stateSelect">
+                        <option value="">Select State</option>
+                        <option value="state1">State 1</option>
+                        <option value="state2">State 2</option>
+                        <option value="state3">State 3</option>
+                    </select>
+                    <button class="module-button">Go</button>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">Resource Requests</div>
+                <div class="module-content">
+                    <div class="module-icon">💼</div>
+                    <div class="module-description">Submit and track resource requests and utilization.</div>
+                    <button class="module-button">Request</button>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">Progress Tracking</div>
+                <div class="module-content">
+                    <div class="module-icon">📊</div>
+                    <div class="module-description">Monitor your school's progress towards transitioning to a standard structure.</div>
+                    <button class="module-button">View Progress</button>
+                </div>
+            </div>
+            <div class="module">
+                <div class="module-header">Alerts & Notifications</div>
+                <div class="module-content">
+                    <div class="module-icon">🔔</div>
+                    <div class="module-description">Stay updated with deadlines, updates, and critical alerts.</div>
+                    <button class="module-button">View Alerts</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

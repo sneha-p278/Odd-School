@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar-nav.custom-gap .nav-link {
+    margin-right: 50px;
+}
+
+.navbar {
+    border-bottom: 2px solid #f8f9fa;
+    padding-right: 10px;
+}
+
+.stats-section {
+    margin: 20px 0;
+}
+
+.stat-card {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+.stat-icon {
+    background-color: #f3f1f5;
+    color: #6c5ce7;
+    border-radius: 50%;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.stat-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+}
+
+.stat-card p {
+    color: #666;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.know-your-school-container {
+    background-color: #37b4a3;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Header Styling */
+.header {
+    background-color: #2d96c8;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h3 {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+
+/* Form Section */
+.form-section {
+    margin-top: 50px;
+}
+
+.input-group {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.input-wrapper {
+    background-color: #ffeaea;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.input-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: none;
+}
+
+.otp-section {
+    text-align: center;
+}
+
+.otp-section p {
+    font-weight: bold;
+    color: #fff;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.otp-inputs input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffeaea;
+    font-size: 1.5rem;
+}
+
+.resend-otp a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.resend-otp a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #ff4757;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #ff6b81;
+    transform: scale(1.05);
+}

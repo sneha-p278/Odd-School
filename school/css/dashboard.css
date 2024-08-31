@@ -1,0 +1,185 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Consistent with modern designs */
+    background-color: #f5f7fb; /* Light background color */
+    color: #333; /* Default text color */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: #2d3436; /* Dark gray for headings */
+}
+
+p {
+    color: #636e72; /* Light gray for paragraphs */
+    margin-bottom: 1rem;
+}
+.sidebar {
+    background-color: #1c1c1e; /* Dark sidebar background */
+    min-height: 100vh; /* Full height */
+    padding-top: 20px; /* Top padding for spacing */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Arrange children in a column */
+}
+
+.sidebar .nav-link {
+    color: #8e8e93; /* Inactive link color */
+    font-weight: 500;
+    padding: 15px;
+    margin-bottom: 10px; /* Space between items */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.sidebar .nav-link.active {
+    background-color: #6c5ce7; /* Active link background */
+    color: #ffffff; /* Active link text color */
+}
+
+.sidebar .nav-link i {
+    font-size: 18px; /* Icon size */
+}
+
+.sidebar .nav-link:hover {
+    background-color: #575fcf; /* Hover effect */
+    color: #ffffff;
+}
+
+.user-info {
+    color: #ffffff; /* White text for user info */
+    text-align: left;
+    margin-top: 20px; /* Push to the bottom */
+    padding: 20px;
+    padding-top: 200px;
+}
+
+.user-info img {
+    border-radius: 50%; /* Rounded user image */
+    margin-bottom: 10px; /* Spacing below image */
+}
+
+.user-info span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.user-info p {
+    font-size: 14px;
+    color: #b2bec3; /* Lighter gray for role text */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Padding around the header */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header h1 {
+    font-size: 24px; /* Size for greeting */
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    width: 25%;
+}
+
+.search-bar input {
+    border-radius: 20px 0 0 20px; /* Rounded left corners */
+    border: 1px solid #dfe6e9; /* Light border */
+    padding: 8px 15px;
+    width: 100%;
+}
+
+.search-bar button {
+    background-color: #6c5ce7; /* Button color */
+    border: none;
+    border-radius: 0 20px 20px 0; /* Rounded right corners */
+    color: #ffffff; /* White icon */
+    padding: 8px 15px;
+    cursor: pointer;
+}
+.stats-card {
+    border-radius: 16px; /* Soft rounded corners */
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;
+    text-align: center;
+}
+
+.stats-card h3 {
+    color: #a1a1a1; /* Light gray for titles */
+    font-size: 1rem; /* Small title size */
+    margin-bottom: 10px;
+}
+
+.stats-card .display-6 {
+    color: #2d3436; /* Darker gray for numbers */
+    font-weight: bold;
+    font-size: 2rem; /* Larger font for emphasis */
+    margin: 0;
+}
+.table-responsive {
+    margin-top: 20px; /* Space above table */
+}
+
+.table {
+    background-color: #ffffff; /* White table background */
+    border-radius: 16px; /* Rounded corners */
+    overflow: hidden; /* Maintain border radius */
+}
+
+.table th {
+    color: #636e72; /* Light gray for headers */
+    font-weight: 600;
+    font-size: 0.9rem; /* Smaller text for headers */
+    padding: 12px;
+    background-color: #f1f2f6; /* Slightly darker background for headers */
+}
+
+.table td {
+    color: #2d3436; /* Dark gray for text */
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 12px;
+}
+
+.table .badge {
+    padding: 10px;
+    font-size: 0.8rem;
+    border-radius: 12px; /* Rounded badges */
+    text-align: center;
+}
+
+.badge-success {
+    background-color: #00b894; /* Green for Active */
+}
+
+.badge-danger {
+    background-color: #d63031; /* Red for Inactive */
+}
+
+.pagination {
+    display: flex;
+    justify-content: end; /* Right-align pagination */
+    margin-top: 20px; /* Space above pagination */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #6c5ce7; /* Active page color */
+    border-color: #6c5ce7;
+    color: #ffffff;
+}
+
+.pagination .page-item .page-link {
+    color: #6c5ce7; /* Default page color */
+}
+
