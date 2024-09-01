@@ -34,6 +34,135 @@
       background-color: #c82333;
       border-color: #bd2130;
     }
+     #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        #chatbot.minimized {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        #chatbot-header {
+            background-color: #17a2b8;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #chatbot-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #chatbot-minimize, #chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        #chatbot-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+        }
+        .message {
+            margin-bottom: 10px;
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 18px;
+        }
+        .bot-message {
+            background-color: #e1f5fe;
+            color:#17a2b8;
+            align-self: flex-start;
+        }
+        .user-message {
+            background-color: #17a2b8;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        #chatbot-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
+        #user-input {
+            flex-grow: 1;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin-right: 10px;
+        }
+        #send-button {
+            background-color: #f1bd2d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        #quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            gap: 5px;
+        }
+        .quick-reply {
+            background-color: #e3f2fd;
+            color: #17a2b8;
+            border: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .quick-reply:hover {
+            background-color: #bbdefb;
+        }
+        #chatbot-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #17a2b8;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        #typing-indicator {
+            display: none;
+            padding: 10px;
+            font-style: italic;
+            color: #757575;
+        }
+        #accessibility-options {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            background-color: #f5f5f5;
+        }
+        #language-select {
+            font-size: 12px;
+        }
+        .accessibility-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
   </style>
 </head>
 <body>
@@ -234,7 +363,130 @@
       </div>
     </div>
   </div>
+  <div id="chatbot" class="minimized"> 
+    <div id="chatbot-icon" onclick="toggleChatbot()">🏫</div>
+    <div id="chatbot-content" style="display: none;">
+        <div id="chatbot-header">
+            <span id="chatbot-title">Samagra Shiksha School Scheme Assistant</span>
+            <button id="chatbot-close" onclick="toggleChatbot()">✖</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="typing-indicator">Bot is typing...</div>
+        <div id="quick-replies">
+            <button class="quick-reply" onclick="sendQuickReply('Existing Schemes')">Existing Schemes</button>
+            <button class="quick-reply" onclick="sendQuickReply('Eligibility')">Eligibility</button>
+            <button class="quick-reply" onclick="sendQuickReply('School Configuration')">School Configuration</button>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Type your query here...">
+            <button id="send-button" onclick="sendMessage()">➤</button>
+        </div>
+        <div id="accessibility-options">
+            <!-- <select id="language-select">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="regional">Regional</option>
+            </select> 
+            <button class="accessibility-button" onclick="toggleTextToSpeech()">🔊</button> -->
+            <button class="accessibility-button" onclick="adjustFontSize(1)">A+</button>
+            <button class="accessibility-button" onclick="adjustFontSize(-1)">A-</button>
+        </div>
+    </div>
+</div>
 
+<script>
+  const chatbot = document.getElementById('chatbot');
+  const chatbotContent = document.getElementById('chatbot-content');
+  const chatbotMessages = document.getElementById('chatbot-messages');
+  const userInput = document.getElementById('user-input');
+  const typingIndicator = document.getElementById('typing-indicator');
+
+  function toggleChatbot() {
+      chatbot.classList.toggle('minimized');
+      chatbotContent.style.display = chatbot.classList.contains('minimized') ? 'none' : 'block';
+      if (!chatbot.classList.contains('minimized') && chatbotMessages.children.length === 0) {
+          setTimeout(() => addBotMessage("Hello! I'm here to help you with Samagra Shiksha schemes. How can I assist you today?"), 500);
+          setTimeout(() => addBotMessage("You can ask about existing schemes, eligibility criteria, or school configurations."), 1000);
+      }
+  }
+
+  function sendMessage() {
+      const message = userInput.value.trim();
+      if (message) {
+          addUserMessage(message);
+          userInput.value = '';
+          showTypingIndicator();
+          setTimeout(() => {
+              hideTypingIndicator();
+              respondToUser(message);
+          }, 1000);
+      }
+  }
+
+  function sendQuickReply(reply) {
+      addUserMessage(reply);
+      showTypingIndicator();
+      setTimeout(() => {
+          hideTypingIndicator();
+          respondToUser(reply);
+      }, 1000);
+  }
+
+  function addUserMessage(message) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message', 'user-message');
+      messageElement.textContent = message;
+      chatbotMessages.appendChild(messageElement);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function addBotMessage(message) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message', 'bot-message');
+      messageElement.textContent = message;
+      chatbotMessages.appendChild(messageElement);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function showTypingIndicator() {
+      typingIndicator.style.display = 'block';
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+
+  function hideTypingIndicator() {
+      typingIndicator.style.display = 'none';
+  }
+
+  function respondToUser(message) {
+      // This is a simple response system. In a real implementation, you'd have more sophisticated logic or API calls.
+      if (message.toLowerCase().includes('existing schemes')) {
+          addBotMessage("Here are some existing schemes: Pradhan Mantri Poshan Shakti Nirman (PM POSHAN), Mid-Day Meal Scheme, Samagra Shiksha Integrated Scheme.");
+      } else if (message.toLowerCase().includes('eligibility')) {
+          addBotMessage("To determine eligibility, I'll need to ask you a few questions. Is your school government-aided or private?");
+      } else if (message.toLowerCase().includes('school configuration')) {
+          addBotMessage("Samagra Shiksha provides guidelines for school structure. Can you tell me more about your current school configuration?");
+      } 
+      else {
+          addBotMessage("I'm sorry, I didn't quite understand that. Can you please rephrase your question or choose one of the quick reply options?");
+      }
+  }
+
+  function toggleTextToSpeech() {
+      // Implement text-to-speech functionality
+      alert('Text-to-speech toggled');
+  }
+
+  function adjustFontSize(change) {
+      const currentSize = parseInt(window.getComputedStyle(document.body).fontSize);
+      document.body.style.fontSize = (currentSize + change) + 'px';
+  }
+
+  userInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          sendMessage();
+      }
+  });
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 </body>

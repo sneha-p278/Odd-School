@@ -31,15 +31,16 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 4fr));
             gap: 20px;
         }
         .module {
-            background-color: #e8f8ff;
+            background-color: #e8f8ff; 
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            align-items: center;
         }
         .module:hover {
             transform: translateY(-5px);
@@ -54,6 +55,7 @@
         }
         .module-content {
             padding: 20px;
+            align-items: center;
         }
         .module-icon {
             font-size: 48px;
@@ -71,6 +73,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            align-items: center;
         }
         .module-button:hover {
             background-color: #e9a45e;
@@ -87,7 +90,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>School Transition Dashboard</h1>
+            <h1>School Monitoring Dashboard</h1>
             <p class="tagline">Streamlining the transition process for a better educational future</p>
         </header>
         <div class="grid">
