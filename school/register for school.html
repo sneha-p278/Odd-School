@@ -11,14 +11,14 @@
         <div class="row justify-content-center align-items-center min-vh-100">
             <!-- UDISE Code Verification Section -->
             <div id="udise-section" class="col-md-4">
-                <div class="card p-4 shadow">
-                    <form>
+                <div class="card p-4 shadow"  style="background-color:  #e8f8ff;">
+                    <form >
                         <div class="mb-3">
                             <label for="udiseCode" class="form-label">UDISE CODE:</label>
                             <input type="text" class="form-control" id="udiseCode" placeholder="Enter UDISE Code">
                         </div>
                         <div class="d-grid">
-                            <button type="button" class="btn btn-primary btn-lg" onclick="showOtpSection()">Verify</button>
+                            <button type="button" class="btn btn-warning btn-lg" style="color: #ffff;" onclick="showOtpSection()">Verify</button>
                         </div>
                     </form>
                 </div>
@@ -26,7 +26,7 @@
 
             <!-- OTP Verification Section -->
             <div id="otp-section" class="col-md-6" style="display:none;">
-                <div class="card p-4 shadow">
+                <div class="card p-4 shadow"  style="background-color:  #e8f8ff;">
                     <div class="text-center mb-4">
                         <p>We have sent an OTP to the email address<br><strong>vp********@gmail.com</strong></p>
                     </div>
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="d-grid">
-                            <button type="button" class="btn btn-primary btn-lg" onclick="showPasswordSection()">Verify</button>
+                            <button type="button" class="btn btn-warning btn-lg" style="color: #ffff;"   onclick="showPasswordSection()">Verify</button>
                         </div>
                     </form>
                 </div>
@@ -51,7 +51,7 @@
 
             <!-- Password Registration Section -->
             <div id="password-section" class="col-md-4" style="display:none;">
-                <div class="card p-4 shadow"> 
+                <div class="card p-4 shadow"  style="background-color:  #e8f8ff;"> 
                     <form>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password:</label>
@@ -62,7 +62,7 @@
                             <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
                         </div>
                         <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg"> <a href="progress-dashboard-school.html" style="text-decoration: none; color: #ffff;">Register</a></button>
+                                <button type="submit" class="btn btn-warning btn-lg"> <a href="progress-dashboard-school.html" style="text-decoration: none; color: #ffff;">Register</a></button>
                         </div>
                     </form>
                 </div>
